@@ -7,6 +7,7 @@ const app = express();
 //import files
 const adminRoute = require('./routes/adminRoute');
 const customerRoute = require('./routes/customerRoute');
+const itemRoute = require('./routes/iteRoute')
 //middleware
 app.use(express.json());
 app.use(express.urlencoded({extended:false}));
@@ -21,6 +22,7 @@ mongose.connection.once('open', ()=>{
 //routing 
 app.use('/admin', adminRoute)
 app.use('/customer', customerRoute)
+app.use('/item', itemRoute);
 //listning
 app.listen(port, () => {
     console.log(`server is runnig on port ${port}`)
