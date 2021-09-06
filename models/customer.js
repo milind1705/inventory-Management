@@ -13,7 +13,11 @@ const customerSchema = mongoose.Schema({
     },
     address:{
         type:String,
-    }
+    },
+    bill:[{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Bill"
+    }]
 });
 
 module.exports = mongoose.model('Customer', customerSchema);
